@@ -6,8 +6,7 @@ pipeline {
     PATH = "$PATH:/usr/local/bin"
 }
 
-    agent {
-        'docker'}
+    agent any
     stages {
             stage('Cloning our Git') {
                 steps {
