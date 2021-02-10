@@ -1,27 +1,13 @@
 {
-  "name": "solution-code",
+  "name": "docker_web_app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Node.js on Docker",
+  "author": "First Last <first.last@example.com>",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "faker": "^4.1.0",
-    "jenkins-mocha": "^3.0.4",
-    "mongoose": "^4.11.11"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^3.0.0",
-    "chai-jquery": "^2.0.0",
-    "mocha": "^3.1.2",
-    "jenkins-mocha": "^3.0.4",
-    "mocha-junit-reporter": "^1.12.1"
+    "express": "^4.16.1"
   }
 }
