@@ -4,6 +4,11 @@ pipeline {
     registryCredential = "dockerhub"
     dockerImage = ''
     PATH = "$PATH:/usr/local/bin"
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "192.168.1.200:8082"
+        NEXUS_REPOSITORY = "docker"
+        NEXUS_CREDENTIAL_ID = "c09bf387-73e4-48b3-982d-b74f75f97a1f"        
 }
 
     agent any
@@ -25,7 +30,7 @@ pipeline {
             stage('Deploying Docker Image to Dockerhub') {
                 steps {
                     script {
-                        docker.withServer('tcp://192.168.1.200:8082', 'c09bf387-73e4-48b3-982d-b74f75f97a1f') {
+                        docker.withRegistry('http://192.168.1.200:8082', 'c09bf387-73e4-48b3-982d-b74f75f97a1f') {
                         dockerImage.push()
                         }
                     }
