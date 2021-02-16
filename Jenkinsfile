@@ -36,7 +36,13 @@ pipeline {
                     }
                 }
             }
-
+            stage('Deploy App') {
+                 steps {
+                    script {
+                        kubernetesDeploy(configs: "hellowhale.yml", kubeconfigId: "mykubeconfig")
+                    }
+                  }
+            }
             stage('Cleaning Up') {
                 steps{
                   sh "docker rmi $registry:$BUILD_NUMBER"
